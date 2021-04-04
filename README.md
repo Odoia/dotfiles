@@ -69,6 +69,7 @@ Add in coc-settings.json
 
 ```bash
 mapleader => ,
+
 ,ev => open init config in nvim path
 ,sv => Webdevicons refresh
 
