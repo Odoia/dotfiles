@@ -1,5 +1,3 @@
-# andersonfernandes dotfiles
-
 ## Dependencies
 You need to have installed this dependencies before continue:
 
