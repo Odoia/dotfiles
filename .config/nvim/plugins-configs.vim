@@ -19,15 +19,24 @@ let NERDTreeShowHidden=1
 nmap <silent> <leader>T :TestFile -strategy=neovim<CR>
 nmap <silent> <leader>lT :TestNearest<CR>
 
-" vim-ruby
-autocmd FileType ruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby let g:rubycomplete_classes_in_global = 1
-autocmd FileType ruby let g:rubycomplete_rails = 1
+" snippet_version 0 is legacy 1 is new
+let g:snipMate = { 'snippet_version' : 1 }
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+let g:ale_fixers = {
+      \ 'ruby': ['rubocop'],
+      \ }
 
-" LanguageClient-neovim
-let g:LanguageClient_serverCommands = {
-    \ 'ruby': ['~/.rvm/gems/ruby-2.5.1/bin/solargraph', 'stdio'],
-    \ }
+let g:ale_linters = {
+      \  'javascript': ['eslint'],
+      \  'ruby': ['brakeman', 'reek', 'rubocop', 'solargraph', 'standardrb'],
+      \}
+
+let g:ale_sign_error = '>>'
+let g:ale_sign_info = '--'
+
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+let g:airline_section_b = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)[0:40]}'
+let g:airline_section_z = ''
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+let g:airline#extensions#wordcount#formatter#default#fmt = '%d w'
