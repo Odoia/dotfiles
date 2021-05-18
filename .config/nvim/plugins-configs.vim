@@ -1,42 +1,101 @@
-" lightline
+" " lightline
+" let g:lightline = {
+"       \ 'colorscheme': 'gruvbox',
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'fugitive#head',
+"       \   'filetype': 'MyFiletype',
+"       \   'fileformat': 'MyFileformat',
+"       \ },
+"       \ }
+"
+"
+
+" Theme
+let ayucolor="gruvbox"
+
+" IndentLine {{
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+
+let g:lightline#bufferline#show_number      = 1
+let g:lightline#bufferline#shorten_path     = 0
+let g:lightline#bufferline#show_number      = 0
+let g:lightline#bufferline#unnamed          = '[No Name]'
+let g:lightline#bufferline#read_only        = ' '
+let g:lightline#bufferline#modified         = ' '
+let g:lightline#bufferline#enable_devicons  = 1      " enable devicons, only support utf-8
+let g:lightline#bufferline#more_buffers     = ''
+
 let g:lightline = {
       \ 'colorscheme': 'gruvbox',
       \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'tabline': {
+      \   'left': [ ['buffers'] ],
+      \   'right': [ ['gitbranch'] ]
+      \ },
+      \ 'component_expand': {
+      \   'buffers': 'lightline#bufferline#buffers'
+      \ },
+      \ 'component_type': {
+      \   'buffers': 'tabsel'
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head',
-      \   'filetype': 'MyFiletype',
-      \   'fileformat': 'MyFileformat',
-      \ },
+      \    'filename': 'LightlineFilename',
+      \    'gitbranch': 'FugitiveHead'
+      \ }
       \ }
 
-" NERDTree
+" }}
+
+" nnn {{
+" Opens the nnn window in a split
+" let g:nnn#layout = 'new' " or vnew, tabnew etc.
+
+" Or pass a dictionary with window size
+" let g:nnn#layout = { 'left': '~20%' } " or right, up, down
+
+" Floating window (neovim latest and vim with patch 8.2.191)
+let g:nnn#layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" }}
+
+" NERDTree {{
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
 let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+" }}
 
-" vim-test
-nmap <silent> <leader>T :TestFile -strategy=neovim<CR>
-nmap <silent> <leader>lT :TestNearest<CR>
+" Testing {{
+let test#strategy = {}
+let test#strategy.nearest = 'neovim'
+let test#strategy.file    = 'dispatch'
+let test#strategy.suite   = 'kitty'
+" }}
 
-" snippet_version 0 is legacy 1 is new
-let g:snipMate = { 'snippet_version' : 1 }
 
-let g:ale_fixers = {
-      \ 'ruby': ['rubocop'],
-      \ }
 
-let g:ale_linters = {
-      \  'javascript': ['eslint'],
-      \  'ruby': ['brakeman', 'reek', 'rubocop', 'solargraph', 'standardrb'],
-      \}
+" Polyglot {{
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+" }}
 
-let g:ale_sign_error = '>>'
-let g:ale_sign_info = '--'
 
-let g:airline_powerline_fonts = 1
-let g:airline_skip_empty_sections = 1
-let g:airline_section_b = '%{airline#util#wrap(airline#extensions#branch#get_head(),0)[0:40]}'
-let g:airline_section_z = ''
-let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
-let g:airline#extensions#wordcount#formatter#default#fmt = '%d w'
+" GUI options {{
+
+let g:neovide_cursor_vfx_mode = "wireframe"
+let g:neovide_cursor_animation_length=0.1
+let g:neovide_cursor_trail_length=0.1
+" }}
+
+" Any Jump {{
+let g:any_jump_ignored_files = ['*.rbi']
+" }}

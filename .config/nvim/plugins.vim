@@ -1,40 +1,55 @@
+" Plugins are managed by vim-plug
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'morhetz/gruvbox'
+" call plug#begin(stdpath('data') . '/plugged')
+
+" Visual
+Plug 'ayu-theme/ayu-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-
-Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
-
-Plug 'tomtom/tcomment_vim'
-Plug 'tomtom/tlib_vim'
-
-Plug 'w0rp/ale'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
+Plug 'Yggdroot/indentLine'
+Plug 'mengelbrecht/lightline-bufferline'
+Plug 'ap/vim-css-color'
+Plug 'junegunn/vim-emoji'
 Plug 'sheerun/vim-polyglot'
+Plug 'TaDaa/vimade'
 
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rake'
+" File manager
+Plug 'mcchrish/nnn.vim'
+Plug 'preservim/nerdtree'                           " NERDTree
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'      " Highlighting Nerdtree
+Plug 'ryanoasis/vim-devicons'                       " Icons for Nerdtree
+Plug 'pechorin/any-jump.vim'
 
-Plug 'janko-m/vim-test'
-Plug 'ngmy/vim-rubocop'
+" Utils
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'vim-test/vim-test'
+Plug 'moll/vim-bbye'
+Plug 'zivyangll/git-blame.vim'
+Plug 'camspiers/lens.vim'                             " Automatically resizes windows
 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
-Plug 'honza/vim-snippets'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+" Language server
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-Plug 'vim-airline/vim-airline'
+" Formatters
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': [
+  \   'javascript',
+  \   'javascriptreact',
+  \   'typescript',
+  \   'typescriptreact',
+  \   'css',
+  \   'less',
+  \   'scss',
+  \   'json',
+  \   'graphql',
+  \   'markdown',
+  \   'vue',
+  \   'yaml',
+  \   'html'
+  \ ] }
+
 call plug#end()

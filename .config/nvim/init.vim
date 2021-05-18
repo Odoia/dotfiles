@@ -1,4 +1,6 @@
-set nocompatible
+set nocompatible    " be iMproved, required
+filetype off        " required
+" filetype plugin indent on    " required
 
 let s:config_path = $HOME.'/.config/nvim/'
 let s:config_files = [
