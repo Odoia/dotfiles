@@ -44,7 +44,7 @@ Read about COC in:
 Install COC components
 
 ```bash
-:CocInstall coc-json coc-solargraph coc-tsserver coc-vimlsp
+:CocInstall coc-solargraph
 ```
 
 Run COC configuration
@@ -54,16 +54,11 @@ Run COC configuration
 Add in coc-settings.json
 ```bash
 {
-  "solargraph.diagnostics": true,
+  "solargraph.diagnostics": true,                                                
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
-
-  "snippets.ultisnips.directories":
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ]
-}
+  "solargraph.hover": true                                            
+} 
 ```
 ## Shortcuts
 
