@@ -17,7 +17,7 @@ git clone https://github.com/odoia/dotfiles ~/.config
 ## After install
 Use these commands inside nvim:
 - :PackerSync
-- :LspInstall (you lsp language here ex: 'ruby' )
+- :LspInstall (you lsp language here ex: :LspInstall ruby )
 
 ## Shortcuts
 
