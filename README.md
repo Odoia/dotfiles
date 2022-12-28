@@ -15,9 +15,9 @@ git clone https://github.com/odoia/dotfiles ~/.config
 ```
 
 ## After clone
-# Add the nvim folder inside the .config folder
+#### Add the nvim folder inside the .config folder
 
-# Use these commands inside nvim:
+#### Use these commands inside nvim:
 - :PackerSync
 - :LspInstall (you lsp language here ex: :LspInstall ruby )
 
