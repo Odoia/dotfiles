@@ -3,110 +3,85 @@ You need to have installed this dependencies before continue:
 
 - [zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [Python3](https://www.python.org/downloads/)
-- [Node](https://nodejs.org/en/)
-- [Nerd Font compatible font](https://github.com/ryanoasis/nerd-fonts#font-installation)
-- [The Silver Searcher](https://github.com/ggreer/the_silver_searcher#installing)
+- [Packer](https://github.com/wbthomason/packer.nvim)
+- [homebrew](https://brew.sh)
 
 ## Installation
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/odoia/dotfiles ~/.dotfiles
-```
-
-Run the install script:
-
-```bash
-./.dotfiles/install.sh
-```
-
-## Update
-
-Pull the new version of the files:
-
-```bash
-cd ~/.dotfiles
-git pull origin master
-```
-
-Run the update script:
-
-```bash
-./.dotfiles/update.sh
+git clone https://github.com/odoia/dotfiles ~/.config
 ```
 
 ## After install
-Read about COC in:
-- [COC-DOC](https://github.com/neoclide/coc.nvim)
+Use these commands inside nvim:
+- :PackerSync
+- :LspInstall (you lsp language here ex: 'ruby' )
 
-Install COC components
-
-```bash
-:CocInstall coc-json coc-solargraph coc-tsserver coc-vimlsp
-```
-
-Run COC configuration
-```bash
-:CocConfig
-```
-Add in coc-settings.json
-```bash
-{
-  "solargraph.diagnostics": true,
-  "solargraph.autoformat": true,
-  "solargraph.formatting": true,
-
-  "snippets.ultisnips.directories":
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ]
-}
-```
 ## Shortcuts
 
 ```bash
 mapleader => ,
 
-,ev => open init config in nvim path
-,sv => Webdevicons refresh
+--> nvim ctrl mapping
+  j => down
+  k => up
+  l => left
+  h => right
+<--
 
-j => down
-k => up
-l => left
-h => right
+--> Split
+  ,vs => vertical split
+  ,hs => horizontal split
+<--
 
-,vs => vertical split
-,hs => horizontal split
+--> Tab
+  ,tn => new tab
+  ,tl => next tab
+  ,th => previous tab
+  ,tq => close tab
+<--
 
-,tn => new tab
-,tl => next tab
-,th => previous tab
-,tq => close tab
+--> (WIP)-custom finder-(WIP)
+  ,fC => find in app/controllers
+  ,fM => find in app/models
+  ,fR => find in app/re,npositories
+  ,fS => find in app/services
+  ,fT => find in spec
+<--
 
-,fC => find in app/controllers
-,fM => find in app/models
-,fR => find in app/repositories
-,fS => find in app/services
-,fT => find in spec
+--> Finder(telescope) 
+  ,ff => :[F]ind [F]iles
+  ,fh => :[F]ind [H]elp
+  ,fw => :[F]ind current [W]ord
+  ,fg => :[F]ind by [G]rep
+  ,fd => :[F]ind [D]iagnostics
+  ,fb => :[F]ind [B]uffers
+<--
 
-control f => :Ag
-control p => :Files
-control b => :Buffers
+--> Tree(nvim-tree)
+  ,ne => tree toggle
+  ,nf => tree find file
+  ,nr => tree refresh
+  ,ni => tree resize +5 px
+  ,nd => tree resize -5 px
+<--
 
-,ne => open nerdtree
-,nf => open nerdtree find
+--> Language server
+  gd  => jumps to the definition of the symbol under the cursor
+  ,lh => information about the symbol under the cursos in a floating window
+  gi  => lists all the implementations for the symbol under the cursor in the quickfix window
+  ,rn => renaname old_fname to new_fname
+  ca  => selects a code action available at the current cursor position
+  gr  => lists all the references to the symbl under the cursor in the quickfix window
+  ,ld => vim.diagnostic.open_float()
+  [d  => vim.diagnostic.goto_prev()
+  ]d  => vim.diagnostic.goto_next()
+  ,lq => vim.diagnostic.setloclist()
+  ,lf => formats the current buffer
+<--
 
-control k => call CocAction
-
-gd  => coc-definition
-gD! => coc-type-definition
-gD@ => coc-implementation
-gD# => coc-references
-
-,cm => call LanguageClient_contextMenu
 ```
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
