@@ -5,6 +5,8 @@ You need to have installed this dependencies before continue:
 - [NeoVim](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 - [Packer](https://github.com/wbthomason/packer.nvim)
 - [homebrew](https://brew.sh)
+- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+- [sharkdp/fd](https://github.com/sharkdp/fd#installation)
 
 ## Installation
 
