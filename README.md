@@ -11,7 +11,7 @@ You need to have installed this dependencies before continue:
 Clone the repository:
 
 ```bash
-git clone https://github.com/odoia/dotfiles ~/.config
+git clone https://github.com/odoia/dotfiles ~/.config/nvim
 ```
 
 ## After clone
