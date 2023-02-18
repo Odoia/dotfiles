@@ -1,6 +1,7 @@
 local luasnip = require 'luasnip'
 local cmp = require 'cmp'
 local lspkind = require 'lspkind'
+
 cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format({
@@ -14,16 +15,15 @@ cmp.setup({
 			end,
 		}),
 	},
-
 	snippet = {
 		expand = function(args)
-			require("luasnip").lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 		end,
 	},
 	mapping = {
 		["<C-p>"] = cmp.mapping.select_prev_item(),
 		["<C-n>"] = cmp.mapping.select_next_item(),
-		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-d>"] = cmp.mapping.scroll_docs( -4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.close(),
@@ -43,17 +43,20 @@ cmp.setup({
 		["<S-Tab>"] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
+			elseif luasnip.jumpable( -1) then
+				luasnip.jump( -1)
 			else
 				fallback()
 			end
 		end,
 	},
 	sources = {
-		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
-		{ name = "neorg" },
+		{ name = "copilot" },
+		{ name = "nvim_lsp", max_item_count = 6 },
+		{ name = "nvim_lua" },
+		{ name = "patch" },
+		{ name = "buffer", max_item_count = 6 },
+		--{ name = "neorg" },
 	},
 })
-
