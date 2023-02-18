@@ -31,7 +31,7 @@ local servers = {
 	"cssls",
 	"emmet_ls",
 	"ltex",
-	"sumneko_lua",
+	"lua_ls",
 	"tsserver",
 	"pyright",
 }

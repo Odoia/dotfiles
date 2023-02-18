@@ -1,4 +1,4 @@
- -- [[ Setting options ]]
+-- [[ Setting options ]]
 -- See `:help vim.o`
 
 -- Set highlight on search

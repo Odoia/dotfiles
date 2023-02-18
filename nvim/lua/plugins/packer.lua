@@ -2,7 +2,7 @@ return require('packer').startup(function()
 	--> packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	--> mason 'lsp installer' 
+	--> mason 'lsp installer'
 	use 'williamboman/mason.nvim'
 	use 'williamboman/mason-lspconfig.nvim'
 	use 'neovim/nvim-lspconfig'
@@ -10,6 +10,8 @@ return require('packer').startup(function()
 	use 'jose-elias-alvarez/null-ls.nvim' --> inject lsp diagnistocs, formattings, code actions, and more ...
 	use 'tami5/lspsaga.nvim' --> icons for LSP diagnostics
 	use 'onsails/lspkind-nvim' --> vscode-like pictograms for neovim lsp completion items
+
+	use "rafamadriz/friendly-snippets"
 	use 'hrsh7th/nvim-cmp' --> Autocompletion plugin
 	use 'hrsh7th/cmp-nvim-lsp' --> LSP source for nvim-cmp
 	use 'L3MON4D3/LuaSnip' --> Snippets plugin
@@ -21,24 +23,22 @@ return require('packer').startup(function()
 	--> ident blankline
 	use 'lukas-reineke/indent-blankline.nvim'
 
-	--> nvim file tree. Alternative to NerdTree
+	--> nvim file tree and devincons. Alternative to NerdTree
 	use {
-		'nvim-tree/nvim-web-devicons.lua'
+		'nvim-tree/nvim-web-devicons',
 		'nvim-tree/nvim-tree.lua'
 	}
-
 	--> lualine
 	--use {
 	use 'nvim-lualine/lualine.nvim'
 	--	requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 	--}
 
-        --> telescope
-       use 'nvim-lua/plenary.nvim'
-       use {
-       		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-       -- or                            , branch = '0.1.x',
-       		requires = { {'nvim-lua/plenary.nvim'} }
+	--> telescope
+	use "nvim-lua/plenary.nvim"
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		-- or                            , branch = '0.1.x',
+		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-
 end)
