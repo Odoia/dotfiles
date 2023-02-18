@@ -1,6 +1,7 @@
- vim.g.mapleader = ',' 
+vim.g.mapleader = ',' 
 
  -- local files
+require 'plugins.packer'
 require 'globals'
 require 'lsp'
-require 'plugins.packer'
+require 'snip-config'
