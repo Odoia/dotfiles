@@ -8,60 +8,25 @@ You need to have installed this dependencies before continue:
 
 ## Installation
 
-Clone the repository:
+Clone the Project into .config Directory:
 
 ```bash
-git clone https://github.com/odoia/dotfiles ~/.config
+git clone https://github.com/odoia/dotfiles
 ```
 
-Run the install script:
+Open nvim and intall using:
 
 ```bash
-./.dotfiles/install.sh
+:lazy
 ```
-
-## Update
-
-Pull the new version of the files:
-
-```bash
-cd ~/.dotfiles
-git pull origin master
-```
-
-Run the update script:
-
-```bash
-./.dotfiles/update.sh
-```
-
 ## After install
-Read about COC in:
-- [COC-DOC](https://github.com/neoclide/coc.nvim)
+Read about Solargraph in:
+- [Solargraph](https://solargraph.org)
 
-Install COC components
+Install Solargraph gem
 
 ```bash
-:CocInstall coc-json coc-solargraph coc-tsserver coc-vimlsp
-```
-
-Run COC configuration
-```bash
-:CocConfig
-```
-Add in coc-settings.json
-```bash
-{
-  "solargraph.diagnostics": true,
-  "solargraph.autoformat": true,
-  "solargraph.formatting": true,
-
-  "snippets.ultisnips.directories":
-  [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ]
-}
+gem install --user-install solargraph
 ```
 ## Shortcuts
 
